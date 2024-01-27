@@ -25,8 +25,14 @@ npm install
 Create a .env file and configure the necessary environment variables for your local setup.
 
 ```
-PORT = YOUR SERVER PORT
-DATABASE_URL = postgres://USER:PASSWORD@HOST:PORT/DATABASE 
+PORT = YOUR SERVER PORT NUMBER
+DATABASE_URL = postgres://meeting_app_db_1vz2_user:oAFChbnINOSbdrxueHt3dUscSTzkO22R@dpg-cmqi37g21fec739mco2g-a.oregon-postgres.render.com/meeting_app_db_1vz2 
+
+```
+
+## Run prisma migrations
+```
+npm run prisma migrate dev
 
 ```
 

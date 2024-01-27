@@ -44,9 +44,6 @@ export const createMeeting = async (req: Request, res: Response) => {
         meetingDate,
         meetingTime,
         meetingNumber: newMeetingNumber,
-        meetingItems: {
-          connect: carriedForwardItems.map((id: string) => ({ id })),
-        },
       },
       include: {
         meetingItems: true,
