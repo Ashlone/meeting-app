@@ -6,7 +6,7 @@ Live server url running on render is https://meeting-app-server.onrender.com
 ## Clone the repository from GitHub
 
 ```
-git clone https://github.com/your/repository.git
+git clone https://github.com/Ashlone/meeting-app.git
 
 ```
 
