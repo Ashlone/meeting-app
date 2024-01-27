@@ -1,0 +1,51 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+enum Types {
+    MANCO
+    FINANCE
+    PTL
+}
+
+model Meeting {
+    id                  String          @id @default(cuid())
+    meetingType         Types           @default(MANCO)
+    meetingNumber       Int             @default(0)
+    meetingDate         DateTime
+    meetingTime         DateTime
+    meetingItems        MeetingItem[]
+    meetingStatuses     MeetingStatus?
+}
+
+model MeetingItem {
+    id               String         @id @default(cuid())
+    meetingId        String
+    meeting          Meeting        @relation(fields: [meetingId], references: [id])
+    description      String
+    dueDate          DateTime
+    statuses         MeetingStatus?
+}
+
+model MeetingStatus {
+    id                 String      @id @default(cuid())
+    meetingId          String      @unique
+    meeting            Meeting     @relation(fields: [meetingId], references: [id])
+    meetingItemId      String      @unique
+    meetingItem        MeetingItem @relation(fields: [meetingItemId], references: [id])
+    status             Status      @default(OPEN)
+    action_required    String
+    responsible_person String
+}
+
+enum Status {
+    OPEN
+    IN_DEVELOPMENT
+    Awaiting_Invoicing
+    CLOSED
+}
