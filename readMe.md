@@ -1,6 +1,46 @@
 # Meeting API Documentation
 
-This document outlines the RESTful APIs for the Resolution Action System, focusing on meeting-related operations.
+This document outlines the RESTful APIs for the Resolution Action System, with a focus on meeting-related operations. The system has been developed using Express with TypeScript and a PostgreSQL database with Prisma.
+Live server url running on render is https://meeting-app-server.onrender.com
+
+## Clone the repository from GitHub
+
+```
+git clone https://github.com/your/repository.git
+
+```
+
+## Navigate to the backend directory:
+```
+cd backend
+
+```
+
+## Install the dependencies using npm or yarn:
+```
+npm install
+```
+
+## Set up the environment variables:
+Create a .env file and configure the necessary environment variables for your local setup.
+
+```
+PORT = YOUR SERVER PORT
+DATABASE_URL = postgres://USER:PASSWORD@HOST:PORT/DATABASE 
+
+```
+
+## Start the server
+```
+npm run dev
+
+```
+
+## To run tests with jest
+```
+npm run test
+
+```
 
 ## Create New Meeting
 
